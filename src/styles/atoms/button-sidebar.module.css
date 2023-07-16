@@ -1,0 +1,19 @@
+.main {
+	--bar-height: 3px;
+	--bar-translate: 3px;
+}
+
+.middle,
+.main,
+.main::before,
+.main::after {
+	height: var(--bar-height);
+}
+
+.main.open::before {
+	transform: translateY(var(--bar-translate)) rotate(45deg);
+}
+
+.main.open::after {
+	transform: translateY(calc(-1 * var(--bar-translate))) rotate(-45deg);
+}

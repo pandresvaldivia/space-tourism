@@ -1,5 +1,5 @@
 import { Slot, component$ } from '@builder.io/qwik';
-import type { SvgElement } from '~/core/interfaces/icon';
+import type { SvgElement } from '@interfaces/icon';
 
 export const Icon = component$(
 	({

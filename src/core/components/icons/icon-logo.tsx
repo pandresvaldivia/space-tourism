@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik';
-import { Icon } from '../templates/icon';
+import { Icon } from '@templates';
 import type { SvgElement } from '~/core/interfaces/icon';
 
 export const IconLogo = component$((props: SvgElement) => {

@@ -20,13 +20,18 @@
 		"paths": {
 			"~/*": ["./src/*"],
 			"@components/*": ["./src/core/components/*"],
+			"@icons": ["./src/core/components/icons/index"],
 			"@atoms": ["./src/core/components/atoms/index"],
 			"@molecules": ["./src/core/components/molecules/index"],
 			"@organisms": ["./src/core/components/organisms/index"],
 			"@templates": ["./src/core/components/templates/index"],
+			"@providers": ["./src/core/providers/index"],
+			"@contexts": ["./src/core/providers/context"],
+			"@hooks": ["./src/core/hooks/index"],
 			"@helpers/*": ["./src/core/helpers/*"],
 			"@constants/*": ["./src/core/constants/*"],
 			"@interfaces/*": ["./src/core/interfaces/*"],
+			"@services/*": ["./src/core/services/*"],
 			"@styles/*": ["./src/styles/*"]
 		}
 	},
