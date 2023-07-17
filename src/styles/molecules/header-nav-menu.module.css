@@ -1,0 +1,5 @@
+.main {
+	background: var(--menu-bg);
+	padding-left: 7.75rem;
+	max-width: 52rem;
+}

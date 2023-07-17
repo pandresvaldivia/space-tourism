@@ -1,16 +1,12 @@
 import { Resource, component$, useSignal } from '@builder.io/qwik';
-import { SidebarMenuItem } from '@atoms';
 import sidebarMenuStyles from '@styles/molecules/sidebar-menu.module.css';
-import { useSidebarContext } from '@contexts';
-import { useGraphql } from '@hooks';
-import type { MenuResponse } from '@interfaces/services/menu';
-import { SkeletonSidebarMenu } from '@molecules';
-import { MENU_QUERY } from '@services/graphql/menu';
+import { useHeaderMenuContext, useSidebarContext } from '@contexts';
+import { LoaderMenu, SidebarMenu, SkeletonSidebarMenu } from '@molecules';
 
 export const SidebarNav = component$(() => {
 	const { isOpen } = useSidebarContext();
 	const sidebarMenuRef = useSignal<HTMLDivElement>();
-	const menu = useGraphql<MenuResponse>(MENU_QUERY);
+	const menu = useHeaderMenuContext();
 
 	return (
 		<nav
@@ -27,21 +23,13 @@ export const SidebarNav = component$(() => {
 		>
 			<Resource
 				value={menu}
-				onResolved={(menu) => {
-					const { errors, data } = menu;
-
-					if (errors || !data) return <SkeletonSidebarMenu />;
-
-					const { docs: menuItems } = data.Menus;
-
-					return (
-						<ul class="flex flex-col gap-5 text-white">
-							{menuItems.map((item) => (
-								<SidebarMenuItem key={item.id} item={item} />
-							))}
-						</ul>
-					);
-				}}
+				onResolved={(menu) => (
+					<LoaderMenu
+						response={menu}
+						skeleton={SkeletonSidebarMenu}
+						menu={SidebarMenu}
+					/>
+				)}
 				onPending={() => <SkeletonSidebarMenu />}
 			/>
 		</nav>

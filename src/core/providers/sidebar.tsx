@@ -7,7 +7,7 @@ import {
 	useSignal,
 } from '@builder.io/qwik';
 
-export const SidebarContext = createContextId<SideBarContextState>(
+const sidebarContext = createContextId<SideBarContextState>(
 	'space.sidebar-context'
 );
 
@@ -28,10 +28,10 @@ export const useSidebarProvider = () => {
 		closeSidebar,
 	};
 
-	useContextProvider(SidebarContext, sidebarState);
+	useContextProvider(sidebarContext, sidebarState);
 };
 
-export const useSidebarContext = () => useContext(SidebarContext);
+export const useSidebarContext = () => useContext(sidebarContext);
 
 type SideBarContextState = {
 	isOpen: Signal<boolean>;

@@ -11,6 +11,9 @@ module.exports = {
 			secondary: '#D0D6F9',
 			white: '#FFFFFF',
 		},
+		letterSpacing: {
+			menu: '0.175em',
+		},
 	},
 	plugins: [],
 };
