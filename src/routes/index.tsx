@@ -1,12 +1,9 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import { HomeView } from '@modules/home/home-view';
 
 export default component$(() => {
-	return (
-		<>
-			<h1>Space tourism</h1>
-		</>
-	);
+	return <HomeView />;
 });
 
 export const head: DocumentHead = {

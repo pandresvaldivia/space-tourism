@@ -19,6 +19,7 @@
 		"types": ["node", "vite/client"],
 		"paths": {
 			"~/*": ["./src/*"],
+			"@modules/*": ["./src/modules/*"],
 			"@components/*": ["./src/core/components/*"],
 			"@icons": ["./src/core/components/icons/index"],
 			"@atoms": ["./src/core/components/atoms/index"],

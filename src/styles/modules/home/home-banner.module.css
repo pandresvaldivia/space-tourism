@@ -1,0 +1,8 @@
+.main {
+	background: url('/images/world-bg.webp') no-repeat;
+	background-size: cover;
+}
+
+.title {
+	font-size: 5rem;
+}

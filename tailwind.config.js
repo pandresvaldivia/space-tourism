@@ -3,7 +3,8 @@ module.exports = {
 	content: ['./src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		fontFamily: {
-			sans: ['Barlow Condensed', 'sans-serif'],
+			sans: ['Barlow', 'sans-serif'],
+			['barlow-condensed']: ['Barlow Condensed', 'sans-serif'],
 			bellefair: ['Bellefair', 'sans-serif'],
 		},
 		colors: {
