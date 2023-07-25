@@ -1,16 +1,31 @@
 .main {
-	height: 9.375rem;
-	letter-spacing: 0.0781rem;
+	@apply text-xl;
+
+	height: 9rem;
+	letter-spacing: 0.06em;
 }
 
 .main::before {
 	animation: ping 2s ease-out infinite;
 }
 
+@screen md {
+	.main {
+		height: 15.125rem;
+		font-size: 2rem;
+	}
+}
+
+@screen lg {
+	.main {
+		height: 17.125rem;
+	}
+}
+
 @keyframes ping {
 	75%,
 	100% {
-		transform: scale(1.2);
+		transform: scale(1.5);
 		opacity: 0;
 	}
 }

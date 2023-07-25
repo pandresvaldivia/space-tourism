@@ -15,6 +15,14 @@ module.exports = {
 		letterSpacing: {
 			menu: '0.175em',
 		},
+		extend: {
+			maxWidth: {
+				wrapper: '80rem',
+			},
+			lineHeight: {
+				body: '1.75',
+			},
+		},
 	},
 	plugins: [],
 };

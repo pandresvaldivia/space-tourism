@@ -7,7 +7,12 @@ export const HeaderNav = component$(() => {
 	const menu = useHeaderMenuContext();
 
 	return (
-		<nav class={[HeaderNavMenuStyles.main, 'h-24 pr-8 shrink-0 w-full']}>
+		<nav
+			class={[
+				HeaderNavMenuStyles.main,
+				'h-24 lg:pr-8 shrink-0 w-full backdrop-blur-2xl',
+			]}
+		>
 			<Resource
 				value={menu}
 				onResolved={(menu) => (

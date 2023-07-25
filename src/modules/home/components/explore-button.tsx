@@ -9,7 +9,7 @@ export const ExploreButton = component$(
 				href={link}
 				class={[
 					exploreButtonStyles.main,
-					'relative flex items-center justify-center uppercase text-primary text-xl font-bellefair aspect-square',
+					'relative flex items-center justify-center uppercase text-primary font-bellefair aspect-square',
 					'before:absolute before:block before:bg-white before:rounded-full before:w-full before:aspect-square',
 				]}
 			>

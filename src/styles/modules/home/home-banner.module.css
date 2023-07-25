@@ -6,3 +6,31 @@
 .title {
 	font-size: 5rem;
 }
+
+.subtitle {
+	@apply text-xl;
+
+	letter-spacing: 0.17em;
+}
+
+@screen md {
+	.title {
+		font-size: 9.375rem;
+	}
+}
+
+@screen lg {
+	.main {
+		background: url('/images/world-side.webp') no-repeat right top,
+			url('/images/space-bg.webp');
+		background-size: auto 100%;
+	}
+
+	.wrapper {
+		max-height: 53.75rem;
+	}
+
+	.subtitle {
+		font-size: 1.75rem;
+	}
+}
