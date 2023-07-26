@@ -18,7 +18,7 @@ export const HomeBanner = component$(() => {
 					<p
 						class={[
 							homeBannerStyles.subtitle,
-							'text-secondary leading-tight font-barlow-condensed mb-4 md:mb-6',
+							'text-secondary leading-tight font-barlow-condensed mb-4 md:mb-6 tracking-subtitle',
 						]}
 					>
 						SO, YOU WANT TO TRAVEL TO

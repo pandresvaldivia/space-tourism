@@ -14,6 +14,7 @@ module.exports = {
 		},
 		letterSpacing: {
 			menu: '0.175em',
+			subtitle: '0.17em',
 		},
 		extend: {
 			maxWidth: {

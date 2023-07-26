@@ -7,15 +7,13 @@
 	font-size: 5rem;
 }
 
-.subtitle {
-	@apply text-xl;
-
-	letter-spacing: 0.17em;
-}
-
 @screen md {
 	.title {
 		font-size: 9.375rem;
+	}
+
+	.subtitle {
+		@apply text-xl;
 	}
 }
 

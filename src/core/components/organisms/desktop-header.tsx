@@ -7,7 +7,7 @@ export const DesktopHeader = component$(() => {
 	return (
 		<header class="fixed lg:top-10 pl-14 w-full hidden md:block">
 			<div class="flex items-center justify-between gap-16">
-				<a href="/">
+				<a href="/" aria-label="Go to space tourism homepage">
 					<IconLogo height="40" width="40" class="md:h-12 md:w-12" />
 				</a>
 				<div class="flex items-center lg:grow">

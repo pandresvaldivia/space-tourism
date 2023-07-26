@@ -7,7 +7,7 @@ export const MobileHeader = component$(() => {
 	return (
 		<header class="fixed z-10 top-0 w-full pt-6 md:hidden">
 			<Wrapper class="flex items-center justify-between">
-				<a href="/">
+				<a href="/" aria-label="Go to space tourism homepage">
 					<IconLogo height="40" width="40" />
 				</a>
 				<Sidebar />
