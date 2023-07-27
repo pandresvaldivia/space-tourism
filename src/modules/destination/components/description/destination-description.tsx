@@ -8,7 +8,10 @@ export const DestinationDescription = component$(() => {
 	const { name, description } = value.data!.Destination;
 
 	return (
-		<section class="text-center md:mb-12" aria-label="Destination description">
+		<section
+			class={[destinationDescriptionStyles.main, 'text-center lg:text-left']}
+			aria-label="Destination description"
+		>
 			<h1
 				class={[
 					destinationDescriptionStyles.title,
@@ -17,7 +20,7 @@ export const DestinationDescription = component$(() => {
 			>
 				{name}
 			</h1>
-			<p class="text-secondary text-sm md:text-base leading-body max-w-xl mx-auto">
+			<p class="text-secondary text-sm md:text-base lg:text-lg leading-body max-w-xl mx-auto">
 				{description}
 			</p>
 		</section>

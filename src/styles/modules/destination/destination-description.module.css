@@ -1,9 +1,26 @@
+.main {
+}
+
 .title {
 	@apply text-5xl;
 }
 
 @screen md {
+	.main {
+		@apply mb-12;
+	}
+
 	.title {
 		font-size: 5rem;
+	}
+}
+
+@screen lg {
+	.main {
+		margin-bottom: 3.375rem;
+	}
+
+	.title {
+		font-size: 6.25rem;
 	}
 }

@@ -4,7 +4,7 @@ import destinationDetail from '@styles/modules/destination/destination-detail.mo
 export const DestinationDetail = component$(
 	({ title, content }: DestinationDetailProps) => {
 		return (
-			<div class="text-center font-barlow-condensed uppercase">
+			<div class="font-barlow-condensed uppercase">
 				<p class="text-sm text-secondary mb-3 tracking-subtitle leading-tight">
 					{title}
 				</p>

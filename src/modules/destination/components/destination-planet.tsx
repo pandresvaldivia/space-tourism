@@ -8,14 +8,14 @@ export const DestinationPlanet = component$(() => {
 	const { alt, height, width, url } = image;
 
 	return (
-		<div class="flex flex-col items-center mb-7 md:mb-14">
+		<div class="flex flex-col items-center mb-7 md:mb-14 lg:mb-0">
 			<h2
 				class={[
 					destinationPlanetStyles.title,
-					'flex gap-4 text-white font-barlow-condensed tracking-subtitle uppercase md:text-xl md:self-start',
+					'flex gap-4 text-white font-barlow-condensed tracking-subtitle uppercase md:self-start',
 				]}
 			>
-				<span class="opacity-25">01</span>
+				<span class="opacity-25 font-bold">01</span>
 				<span>Pick your destination</span>
 			</h2>
 			<img
@@ -23,7 +23,7 @@ export const DestinationPlanet = component$(() => {
 				alt={alt}
 				height={height}
 				width={width}
-				class={[destinationPlanetStyles.image, 'aspect-square']}
+				class={[destinationPlanetStyles.image, 'aspect-square lg:ml-16 w-full']}
 			/>
 		</div>
 	);

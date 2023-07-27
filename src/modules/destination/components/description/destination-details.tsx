@@ -8,7 +8,7 @@ export const DestinationDetails = component$(() => {
 
 	return (
 		<section
-			class="flex flex-col md:flex-row gap-8 md:gap-24 justify-center"
+			class="flex flex-col md:flex-row gap-8 md:gap-24 justify-center text-center lg:text-left"
 			aria-label="Destination details"
 		>
 			<DestinationDetail title="avg. distance" content={distance} />

@@ -3,15 +3,29 @@
 }
 
 .image {
-	width: 10.625rem;
+	max-width: 10.625rem;
 }
 
 @screen md {
 	.image {
-		width: 18.75rem;
+		max-width: 18.75rem;
 	}
 
 	.title {
+		@apply text-xl;
+
 		margin-bottom: 3.75rem;
+	}
+}
+
+@screen lg {
+	.title {
+		@apply mb-24;
+
+		font-size: 1.75rem;
+	}
+
+	.image {
+		max-width: 28rem;
 	}
 }

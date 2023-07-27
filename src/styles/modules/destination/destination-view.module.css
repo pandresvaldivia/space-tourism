@@ -14,3 +14,13 @@
 		padding-top: 8.5rem;
 	}
 }
+
+@screen lg {
+	.main {
+		padding-top: 13.25rem;
+	}
+
+	.content {
+		max-width: 28rem;
+	}
+}
