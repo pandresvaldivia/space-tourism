@@ -1,0 +1,9 @@
+.title {
+	@apply text-5xl;
+}
+
+@screen md {
+	.title {
+		font-size: 5rem;
+	}
+}

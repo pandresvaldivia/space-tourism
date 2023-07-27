@@ -1,3 +1,16 @@
 .main {
+	@apply pt-24;
+
 	background: url('/images/destination-bg.webp');
+	background-size: cover;
+}
+
+.divider {
+	border-color: #383b4b;
+}
+
+@screen md {
+	.main {
+		padding-top: 8.5rem;
+	}
 }

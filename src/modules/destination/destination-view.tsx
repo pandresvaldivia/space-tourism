@@ -8,12 +8,14 @@ import destinationView from '@styles/modules/destination/destination-view.module
 
 export const DestinationView = component$(() => {
 	return (
-		<div class={[destinationView.main, 'pt-24 pb-16 min-h-screen bg-cover']}>
-			<Wrapper class="mx-auto">
+		<div class={[destinationView.main, 'pb-16 min-h-screen bg-cover']}>
+			<Wrapper class="mx-auto px-10">
 				<DestinationPlanet />
 				<DestinationNav />
 				<DestinationDescription />
-				<hr class="my-8 border-[#383B4B]" />
+				<hr
+					class={[destinationView.divider, 'my-8 md:mb-7 max-w-xl mx-auto']}
+				/>
 				<DestinationDetails />
 			</Wrapper>
 		</div>

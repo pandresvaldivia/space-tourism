@@ -5,11 +5,11 @@ import { Link } from '@builder.io/qwik-city';
 import navMenuItemStyles from '@styles/atoms/nav-menu-item.module.css';
 
 export const NavMenuItem = component$(({ item }: NavMenuItemProps) => {
-	const { isCurrentPath } = useCurrentPath();
+	const { isCurrentPath, isSubPath } = useCurrentPath();
 
 	const { id, link, name } = item;
 
-	const isActive = isCurrentPath(link);
+	const isActive = isSubPath(link) || isCurrentPath(link);
 
 	return (
 		<li class="h-full">

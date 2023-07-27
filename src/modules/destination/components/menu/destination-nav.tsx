@@ -8,7 +8,7 @@ export const DestinationNav = component$(() => {
 	const destinations = useGetDestinations();
 
 	return (
-		<nav aria-label="Destinations menu">
+		<nav aria-label="Destinations menu" class="mb-5 md:mb-8">
 			<Resource
 				value={destinations}
 				onResolved={(destinations) => (

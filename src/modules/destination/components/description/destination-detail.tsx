@@ -5,8 +5,15 @@ export const DestinationDetail = component$(
 	({ title, content }: DestinationDetailProps) => {
 		return (
 			<div class="text-center font-barlow-condensed uppercase">
-				<p class="text-sm text-secondary mb-3 tracking-subtitle">{title}</p>
-				<p class={[destinationDetail.content, 'text-white font-bellefair']}>
+				<p class="text-sm text-secondary mb-3 tracking-subtitle leading-tight">
+					{title}
+				</p>
+				<p
+					class={[
+						destinationDetail.content,
+						'text-white font-bellefair leading-tight',
+					]}
+				>
 					{content}
 				</p>
 			</div>

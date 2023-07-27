@@ -20,7 +20,7 @@ export const DestinationMenuItem = component$(
 							'before:scale-100 text-white': isActive,
 							'text-secondary': !isActive,
 						},
-						'relative inline-block pb-3.5 tracking-subtitle mb-5',
+						'relative inline-block pb-3.5 tracking-subtitle',
 						'before:absolute before:bottom-0 before:w-full before:origin-bottom before:bg-white before:scale-0 before:transition-transform before:h-0.5',
 					]}
 				>

@@ -8,8 +8,13 @@ export const DestinationPlanet = component$(() => {
 	const { alt, height, width, url } = image;
 
 	return (
-		<div class="flex flex-col items-center mb-7">
-			<h2 class="flex gap-4 text-white font-barlow-condensed tracking-subtitle uppercase mb-8">
+		<div class="flex flex-col items-center mb-7 md:mb-14">
+			<h2
+				class={[
+					destinationPlanetStyles.title,
+					'flex gap-4 text-white font-barlow-condensed tracking-subtitle uppercase md:text-xl md:self-start',
+				]}
+			>
 				<span class="opacity-25">01</span>
 				<span>Pick your destination</span>
 			</h2>
