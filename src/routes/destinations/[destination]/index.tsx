@@ -1,49 +1,62 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
-import { routeLoader$ } from '@builder.io/qwik-city';
-import { getDestinationById } from '@modules/destination/helpers/destination';
-import { DestinationView } from '@modules/destination/destination-view';
-import { useDestinationProvider } from '@modules/destination/providers/destination';
+import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
+import { getDestinationBySlug } from "@modules/destination/helpers/destination";
+import { DestinationView } from "@modules/destination/destination-view";
+import { useDestinationProvider } from "@modules/destination/providers/destination";
 
 export const useDestinationDetails = routeLoader$(async (event) => {
-	const { destination: id } = event.params;
-	const destination = await getDestinationById(id);
+  const { destination: slug } = event.params;
+  const destination = await getDestinationBySlug(slug);
 
-	// TODO: Redirect to 404 if destination is not found
+  // TODO: Redirect to 404 if destination is not found
 
-	return destination;
+  return destination;
 });
 
 export default component$(() => {
-	const destination = useDestinationDetails();
+  const destination = useDestinationDetails();
 
-	useDestinationProvider(destination);
+  useDestinationProvider(destination);
 
-	const { errors, data } = destination.value;
+  const { errors, data } = destination.value;
 
-	if (errors || !data) {
-		return <div>Loading...</div>;
-	}
+  if (errors || !data) {
+    return <div>Loading...</div>;
+  }
 
-	return <DestinationView />;
+  return <DestinationView />;
 });
 
 export const head: DocumentHead = ({ resolveValue }) => {
-	const destination = resolveValue(useDestinationDetails);
-	const { data, errors } = destination;
+  const destination = resolveValue(useDestinationDetails);
+  const { data, errors } = destination;
 
-	if (errors || !data) return {};
+  if (errors || !data) return {};
 
-	const { name, description } = data.Destination;
+  const { title, description, image } = data.DestinationBySlug.meta;
+  const { url: thumbnail } = image;
 
-	// TODO: Add image to head
-	return {
-		title: `${name} | Space tourism`,
-		meta: [
-			{
-				name: 'description',
-				content: description,
-			},
-		],
-	};
+  // TODO: Add image to head
+  return {
+    title: title,
+    meta: [
+      {
+        name: "description",
+        content: description,
+      },
+      {
+        name: "og:title",
+        content: title,
+      },
+      {
+        name: "og:description",
+        content: description,
+      },
+      {
+        name: "og:image",
+        content: thumbnail,
+      },
+    ],
+  };
 };

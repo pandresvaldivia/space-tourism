@@ -1,19 +1,19 @@
-import type { Signal } from '@builder.io/qwik';
+import type { Signal } from "@builder.io/qwik";
 import {
-	createContextId,
-	useContext,
-	useContextProvider,
-} from '@builder.io/qwik';
-import type { DestinationResponse } from '@interfaces/services/destination';
+  createContextId,
+  useContext,
+  useContextProvider,
+} from "@builder.io/qwik";
+import type { DestinationBySlugResponse } from "~/core/interfaces/services/destination-by-slug";
 
 const destinationContext = createContextId<
-	Readonly<Signal<DestinationResponse>>
->('space.destination-context');
+  Readonly<Signal<DestinationBySlugResponse>>
+>("space.destination-context");
 
 export const useDestinationProvider = (
-	destination: Readonly<Signal<DestinationResponse>>
+  destination: Readonly<Signal<DestinationBySlugResponse>>
 ) => {
-	useContextProvider(destinationContext, destination);
+  useContextProvider(destinationContext, destination);
 };
 
 export const useDestinationContext = () => useContext(destinationContext);

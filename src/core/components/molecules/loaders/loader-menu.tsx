@@ -1,21 +1,20 @@
-import { component$, type Component } from '@builder.io/qwik';
-import type { MenuItem } from '@interfaces/services/menu';
-import type { MenuResponse } from '@interfaces/services/menu';
+import { component$, type Component } from "@builder.io/qwik";
+import type { HeaderResponse, NavItem } from "@interfaces/services/header";
 
 export const LoaderMenu = component$(
-	({ response, skeleton: Skeleton, menu: Menu }: LoaderMenuProps) => {
-		const { errors, data } = response;
+  ({ response, skeleton: Skeleton, menu: Menu }: LoaderMenuProps) => {
+    const { errors, data } = response;
 
-		if (errors || !data) return <Skeleton />;
+    if (errors || !data) return <Skeleton />;
 
-		const { docs: items } = data.Menus;
+    const { navItems: items } = data.Header;
 
-		return <Menu items={items} />;
-	}
+    return <Menu items={items} />;
+  }
 );
 
 type LoaderMenuProps = {
-	response: MenuResponse;
-	skeleton: Component<{}>;
-	menu: Component<{ items: MenuItem[] }>;
+  response: HeaderResponse;
+  skeleton: Component<{}>;
+  menu: Component<{ items: NavItem[] }>;
 };

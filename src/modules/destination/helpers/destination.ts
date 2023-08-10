@@ -1,9 +1,9 @@
-import { fetchGrapghql } from '@helpers/graphql';
-import { DESTINATION } from '@services/graphql/destination';
-import type { DestinationResponse } from '@interfaces/services/destination';
+import { fetchGraphql } from "@helpers/graphql";
+import { DESTINATION_BY_SLUG } from "@services/graphql/destination";
+import type { DestinationBySlugResponse } from "~/core/interfaces/services/destination-by-slug";
 
-export const getDestinationById = async (
-	id: string
-): Promise<DestinationResponse> => {
-	return fetchGrapghql({ query: DESTINATION, variables: { id } });
+export const getDestinationBySlug = async (
+  slug: string
+): Promise<DestinationBySlugResponse> => {
+  return fetchGraphql({ query: DESTINATION_BY_SLUG, variables: { slug } });
 };

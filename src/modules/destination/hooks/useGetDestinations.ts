@@ -1,11 +1,11 @@
-import { useGraphql } from '@hooks';
-import { DESTINATIONS } from '@services/graphql/destination';
-import type { DestinationsResponse } from '@interfaces/services/destinations';
+import { useGraphql } from "@hooks";
+import { DESTINATIONS } from "@services/graphql/destination";
+import type { DestinationsResponse } from "@interfaces/services/destinations";
 
 const useGetDestinations = () => {
-	const destinationsResponse = useGraphql<DestinationsResponse>(DESTINATIONS);
+  const destinationsResponse = useGraphql<DestinationsResponse>(DESTINATIONS);
 
-	return destinationsResponse;
+  return destinationsResponse;
 };
 
 export default useGetDestinations;

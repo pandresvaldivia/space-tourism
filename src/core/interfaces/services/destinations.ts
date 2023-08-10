@@ -1,16 +1,16 @@
-import type { GraphqlGenericResponse } from './response';
+import type { GraphqlGenericResponse } from "./response";
 
 export type DestinationsResponse = GraphqlGenericResponse<DestinationsData>;
 
 type DestinationsData = {
-	Destinations: DestinationDocs;
+  Destinations: DestinationDocs;
 };
 
 type DestinationDocs = {
-	docs: DestinationItem[];
+  docs: DestinationItem[];
 };
 
 export type DestinationItem = {
-	id: string;
-	name: string;
+  slug: string;
+  title: string;
 };

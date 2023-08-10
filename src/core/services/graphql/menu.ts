@@ -1,9 +1,12 @@
-export const MENU_QUERY = `{
-  Menus(sort:"id"){
-    docs{
-      id,
-      name,
-      link
+export const HEADER_QUERY = `
+query Header {
+  Header {
+    navItems {
+      link {
+        type
+        url
+        label
+      }
     }
   }
-}`;
+} `;

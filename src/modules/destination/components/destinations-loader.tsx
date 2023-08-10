@@ -1,24 +1,24 @@
-import type { Component } from '@builder.io/qwik';
-import { component$ } from '@builder.io/qwik';
+import type { Component } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type {
-	DestinationItem,
-	DestinationsResponse,
-} from '@interfaces/services/destinations';
+  DestinationItem,
+  DestinationsResponse,
+} from "@interfaces/services/destinations";
 
 export const DestinationsLoader = component$(
-	({ response, skeleton: Skeleton, menu: Menu }: DestinationsLoaderProps) => {
-		const { errors, data } = response;
+  ({ response, skeleton: Skeleton, menu: Menu }: DestinationsLoaderProps) => {
+    const { errors, data } = response;
 
-		if (errors || !data) return <Skeleton />;
+    if (errors || !data) return <Skeleton />;
 
-		const { docs: items } = data.Destinations;
+    const { docs: items } = data.Destinations;
 
-		return <Menu items={items} />;
-	}
+    return <Menu items={items} />;
+  }
 );
 
 type DestinationsLoaderProps = {
-	response: DestinationsResponse;
-	skeleton: Component<{}>;
-	menu: Component<{ items: DestinationItem[] }>;
+  response: DestinationsResponse;
+  skeleton: Component<{}>;
+  menu: Component<{ items: DestinationItem[] }>;
 };
