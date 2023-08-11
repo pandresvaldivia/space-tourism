@@ -4,7 +4,7 @@ import { useDestinationContext } from "../../providers/destination";
 
 export const DestinationDetails = component$(() => {
   const { value } = useDestinationContext();
-  const { distance, travel_time } = value.data!.DestinationBySlug;
+  const { distance, travel_time } = value.data.DestinationBySlug;
 
   return (
     <section

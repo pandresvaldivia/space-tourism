@@ -1,9 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
-import { getDestinationBySlug } from "@modules/destination/helpers/destination";
 import { DestinationView } from "@modules/destination/destination-view";
 import { useDestinationProvider } from "@modules/destination/providers/destination";
+import { getDestinationBySlug } from "~/core/services/api/destination";
 
 export const useDestinationDetails = routeLoader$(async (event) => {
   const { destination: slug } = event.params;
@@ -37,7 +37,6 @@ export const head: DocumentHead = ({ resolveValue }) => {
   const { title, description, image } = data.DestinationBySlug.meta;
   const { url: thumbnail } = image;
 
-  // TODO: Add image to head
   return {
     title: title,
     meta: [

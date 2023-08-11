@@ -1,0 +1,28 @@
+.main {
+  background: url('/images/crew-bg.webp') center center;
+	background-size: cover;
+}
+
+.grid {
+  grid-template-areas: 
+    "title"
+    "image"
+    "menu"
+    "content";
+}
+
+.title {
+  grid-area: title;
+}
+
+.content {
+  grid-area: content;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.image {
+  grid-area: image;
+}

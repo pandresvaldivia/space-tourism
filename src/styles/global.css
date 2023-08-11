@@ -9,6 +9,14 @@
 
 	@font-face {
 		font-display: swap;
+		font-family: 'Barlow Condensed';
+		font-style: normal;
+		font-weight: 700;
+		src: url('/fonts/barlow-condensed-700.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-display: swap;
 		font-family: 'Barlow';
 		font-style: normal;
 		font-weight: 400;

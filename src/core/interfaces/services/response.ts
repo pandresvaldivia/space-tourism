@@ -1,8 +1,8 @@
 export interface GraphqlGenericResponse<T> {
-	data?: T;
-	errors?: GraphqlGenericError[];
+  data: T;
+  errors?: GraphqlGenericError[];
 }
 
 type GraphqlGenericError = {
-	message: string;
+  message: string;
 };

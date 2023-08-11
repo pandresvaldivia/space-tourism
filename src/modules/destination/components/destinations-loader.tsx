@@ -9,7 +9,7 @@ export const DestinationsLoader = component$(
   ({ response, skeleton: Skeleton, menu: Menu }: DestinationsLoaderProps) => {
     const { errors, data } = response;
 
-    if (errors || !data) return <Skeleton />;
+    if (errors) return <Skeleton />;
 
     const { docs: items } = data.Destinations;
 

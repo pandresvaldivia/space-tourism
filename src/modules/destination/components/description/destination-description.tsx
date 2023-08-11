@@ -5,7 +5,7 @@ import destinationDescriptionStyles from "@styles/modules/destination/destinatio
 
 export const DestinationDescription = component$(() => {
   const { value } = useDestinationContext();
-  const { title, description } = value.data!.DestinationBySlug;
+  const { title, description } = value.data.DestinationBySlug;
 
   return (
     <section

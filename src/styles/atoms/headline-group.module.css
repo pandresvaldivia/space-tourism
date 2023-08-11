@@ -1,0 +1,19 @@
+.main {
+	@apply mb-8;
+}
+
+@screen md {
+	.main {
+		@apply text-xl;
+
+		margin-bottom: 3.75rem;
+	}
+}
+
+@screen lg {
+	.main {
+		@apply mb-24;
+
+		font-size: 1.75rem;
+	}
+}

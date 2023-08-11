@@ -25,8 +25,8 @@ lerna-debug.log*
 
 # Editor
 .vscode/*
-!.vscode/launch.json
-!.vscode/*.code-snippets
+.vscode/launch.json
+.vscode/*.code-snippets
 
 .idea
 .DS_Store
@@ -38,4 +38,4 @@ lerna-debug.log*
 
 # Yarn
 .yarn/*
-!.yarn/releases
+.yarn/releases
