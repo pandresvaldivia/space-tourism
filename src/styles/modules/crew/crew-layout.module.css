@@ -1,9 +1,13 @@
 .main {
+  @apply pt-24;
+
   background: url('/images/crew-bg.webp') center center;
 	background-size: cover;
 }
 
 .grid {
+  @apply grid-cols-1;
+
   grid-template-areas: 
     "title"
     "image"
@@ -25,4 +29,43 @@
 
 .image {
   grid-area: image;
+}
+
+@screen md {
+  .main {
+    padding-top: 8.5rem;
+  }
+
+  .content {
+    @apply mb-10;
+  }
+
+  .grid {
+    grid-template-areas: 
+      "title"
+      "content"
+      "menu"
+      "image";
+  }
+}
+
+@screen lg {
+  .main {
+    padding-top: 12rem;
+  }
+  
+  .content {
+    margin-bottom: 7.5rem;
+  }
+  
+  .grid {
+    height: 43rem;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas: 
+      "title image"
+      "content image"
+      "menu image"
+  }
 }

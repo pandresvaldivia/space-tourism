@@ -5,3 +5,32 @@
 .image {
   height: 13.875rem;
 }
+
+@screen md {
+  .main {
+    @apply border-none;
+  }
+
+  .image {
+    height: 33.25rem;
+  }
+}
+
+@screen lg {
+  .image {
+    @apply h-auto;
+    max-height: 44.5rem;
+  }
+}
+
+@media screen and (768px <= width) and (1024px < height) {
+  .main {
+    @apply border-solid;
+  }
+}
+
+@media screen and (1024px <= width) and (900px < height) {
+  .main {
+    @apply border-solid;
+  }
+}

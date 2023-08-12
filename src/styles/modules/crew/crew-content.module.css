@@ -1,0 +1,32 @@
+.name {
+  @apply text-2xl;
+}
+
+.description {
+  --description-max-width: 37rem;
+  max-width: var(--description-max-width);
+}
+
+@screen md {
+  .title {
+    @apply text-2xl;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+}
+
+@screen lg {
+  .title {
+    font-size: 2rem;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .description {
+    max-width: 27.75rem;
+  }
+}

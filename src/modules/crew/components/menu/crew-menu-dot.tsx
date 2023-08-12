@@ -21,7 +21,7 @@ export const CrewMenuDot = component$(({ member }: CrewMenuDotProps) => {
             "opacity-100": isActive,
             "opacity-20 hover:opacity-50": !isActive,
           },
-          "block h-2.5 bg-white aspect-square rounded-full transition-opacity",
+          "block h-2.5 lg:h-3.5 bg-white aspect-square rounded-full transition-opacity",
         ]}
       />
     </li>

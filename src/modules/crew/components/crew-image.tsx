@@ -13,7 +13,7 @@ export const CrewImage = component$(() => {
       class={[
         crewImageStyles.main,
         crewLayoutStyles.image,
-        "flex justify-center border-b mb-8",
+        "flex justify-center lg:justify-end items-end border-b mb-8 md:mb-0 w-full max-w-md mx-auto lg:max-w-none",
       ]}
     >
       <img

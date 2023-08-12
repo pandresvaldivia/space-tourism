@@ -9,7 +9,7 @@ export const HeadlineGroup = component$(
         class={[
           headlineGroupStyles.main,
           className,
-          "flex justify-center gap-4 text-white font-barlow-condensed tracking-subtitle uppercase",
+          "flex justify-center md:justify-start gap-4 text-white font-barlow-condensed tracking-subtitle uppercase w-full",
         ]}
       >
         <span class="opacity-25 font-bold">{index}</span>

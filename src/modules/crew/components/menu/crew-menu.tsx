@@ -4,7 +4,7 @@ import { CrewMenuDot } from "./crew-menu-dot";
 
 export const CrewMenu = component$(({ items }: CrewMenuProps) => {
   return (
-    <ul class="flex gap-4">
+    <ul class="flex gap-4 lg:gap-6">
       {items.map((crewMember) => (
         <CrewMenuDot key={crewMember.slug} member={crewMember} />
       ))}

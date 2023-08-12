@@ -9,7 +9,9 @@ export const CrewNav = component$(() => {
   const { crewMembersResponse } = useGetCrewMembers();
 
   return (
-    <nav class={[crewLayoutStyles.menu, "mb-8 mx-auto"]}>
+    <nav
+      class={[crewLayoutStyles.menu, "mb-8 md:mb-10 mx-auto lg:mx-0 lg:mb-24"]}
+    >
       <Resource
         value={crewMembersResponse}
         onResolved={(crewMembers) => (

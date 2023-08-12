@@ -5,11 +5,11 @@ import { CrewNav } from "@modules/crew/components/menu/crew-nav";
 
 export default component$(() => {
   return (
-    <div class={[crewLayoutStyles.main, "pb-16 pt-24 min-h-screen bg-cover"]}>
+    <div class={[crewLayoutStyles.main, "pb-12 md:pb-0 min-h-screen"]}>
       <Wrapper
         class={[
           crewLayoutStyles.grid,
-          "grid grid-cols-1 mx-auto px-10 md:px-10 lg:px-14 lg:flex lg:gap-24 xl:gap-40 lg:justify-center lg:items-end",
+          "grid content-between mx-auto md:px-10 lg:px-16",
         ]}
       >
         <Slot />
