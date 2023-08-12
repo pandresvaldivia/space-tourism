@@ -3,14 +3,23 @@ import { useCrewContext } from "../providers/crew";
 import crewLayoutStyles from "@styles/modules/crew/crew-layout.module.css";
 import crewContentStyles from "@styles/modules/crew/crew-content.module.css";
 import { getDescriptionWidth } from "../helpers/layout";
+import { useCrewTransitionContext } from "../providers/crew-transition";
 
 export const CrewContent = component$(() => {
   const { value } = useCrewContext();
+  const { transition } = useCrewTransitionContext();
   const { title, name, description } = value.data.CrewMemberBySlug;
 
   return (
-    <div
-      class={[crewLayoutStyles.content, "text-center lg:text-left self-end"]}
+    <section
+      key={title}
+      class={[
+        crewLayoutStyles.content,
+        transition,
+        "text-center lg:text-left self-end",
+        "animate__animated",
+      ]}
+      aria-label="Crew member information"
     >
       <h1
         class={[
@@ -39,6 +48,6 @@ export const CrewContent = component$(() => {
       >
         {description}
       </p>
-    </div>
+    </section>
   );
 });

@@ -1,0 +1,9 @@
+.divider {
+  border-color: #383b4b;
+}
+
+@screen lg {
+	.main {
+		max-width: 28rem;
+	}
+}

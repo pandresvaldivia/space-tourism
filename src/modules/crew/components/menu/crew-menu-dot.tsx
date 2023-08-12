@@ -1,14 +1,28 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$ } from "@builder.io/qwik";
 import type { CrewMembersItem } from "@interfaces/services/crew-members";
 import { useCurrentPath } from "@hooks";
 import { Link } from "@builder.io/qwik-city";
+import { useCrewTransitionContext } from "../../providers/crew-transition";
 
-export const CrewMenuDot = component$(({ member }: CrewMenuDotProps) => {
+export const CrewMenuDot = component$(({ member, index }: CrewMenuDotProps) => {
   const { isCurrentPath } = useCurrentPath();
+  const transition = useCrewTransitionContext();
 
   const { slug, title } = member;
   const path = `/crew/${slug}/`;
   const isActive = isCurrentPath(path);
+
+  const handleOnClick = $(() => {
+    if (index < transition.menuIndex) {
+      transition.type = "animate__fadeInLeft";
+    }
+
+    if (index > transition.menuIndex) {
+      transition.type = "animate__fadeInRight";
+    }
+
+    transition.menuIndex = index;
+  });
 
   return (
     <li>
@@ -23,6 +37,7 @@ export const CrewMenuDot = component$(({ member }: CrewMenuDotProps) => {
           },
           "block h-2.5 lg:h-3.5 bg-white aspect-square rounded-full transition-opacity",
         ]}
+        onClick$={handleOnClick}
       />
     </li>
   );
@@ -30,4 +45,5 @@ export const CrewMenuDot = component$(({ member }: CrewMenuDotProps) => {
 
 type CrewMenuDotProps = {
   member: CrewMembersItem;
+  index: number;
 };

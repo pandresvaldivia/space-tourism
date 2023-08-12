@@ -10,6 +10,7 @@ export const CrewNav = component$(() => {
 
   return (
     <nav
+      aria-label="Crew members menu"
       class={[crewLayoutStyles.menu, "mb-8 md:mb-10 mx-auto lg:mx-0 lg:mb-24"]}
     >
       <Resource

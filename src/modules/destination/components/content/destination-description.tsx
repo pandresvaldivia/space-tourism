@@ -2,15 +2,23 @@ import { component$ } from "@builder.io/qwik";
 import { useDestinationContext } from "../../providers/destination";
 
 import destinationDescriptionStyles from "@styles/modules/destination/destination-description.module.css";
+import { useLocation } from "@builder.io/qwik-city";
 
 export const DestinationDescription = component$(() => {
+  const { pathname } = useLocation().url;
   const { value } = useDestinationContext();
+
   const { title, description } = value.data.DestinationBySlug;
 
   return (
     <section
-      class={[destinationDescriptionStyles.main, "text-center lg:text-left"]}
-      aria-label="Destination description"
+      key={pathname}
+      class={[
+        destinationDescriptionStyles.main,
+        "text-center lg:text-left",
+        "animate__animated",
+      ]}
+      aria-label="Destination information"
     >
       <h1
         class={[

@@ -1,0 +1,53 @@
+.main {
+	@apply pt-24;
+
+	background: url('/images/destination-bg.webp');
+	background-size: cover;
+}
+
+.grid {
+  @apply grid-cols-1;
+
+  grid-template-areas: 
+    "title"
+    "image"
+    "menu"
+    "content";
+}
+
+.title {
+  grid-area: title;
+}
+
+.image {
+  grid-area: image;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.content {
+  grid-area: content;
+}
+
+@screen md {
+	.main {
+		padding-top: 8.5rem;
+	}
+}
+
+@screen lg {
+	.main {
+		padding-top: 13.25rem;
+	}
+
+  .grid {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+      "title ."
+      "image menu"
+      "image content";
+  }
+}

@@ -1,4 +1,5 @@
 .main {
+	animation-name: fadeDown;
 }
 
 .title {
@@ -22,5 +23,17 @@
 
 	.title {
 		font-size: 6.25rem;
+	}
+}
+
+@keyframes fadeDown {
+	from {
+		opacity: 0;
+		transform: translateY(-1.5rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
