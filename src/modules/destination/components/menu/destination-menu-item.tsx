@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { useCurrentPath } from "@hooks";
 import type { DestinationItem } from "@interfaces/services/destinations";
+import { Menu } from "@templates";
 
 export const DestinationMenuItem = component$(
   ({ destination }: DestinationMenuItemProps) => {
@@ -12,21 +13,21 @@ export const DestinationMenuItem = component$(
     const isActive = isCurrentPath(path);
 
     return (
-      <li>
+      <Menu.Item active={isActive}>
         <Link
           href={path}
           class={[
             {
-              "before:scale-100 text-white": isActive,
+              "text-white": isActive,
               "text-secondary": !isActive,
             },
             "relative inline-block pb-3.5 tracking-subtitle",
-            "before:absolute before:bottom-0 before:w-full before:origin-bottom before:bg-white before:scale-0 before:transition-transform before:h-0.5",
+            "before:absolute before:h-1 before:bottom-0 before:w-full before:bg-white before:opacity-50 before:scale-0 before:transition-transform hover:before:scale-100",
           ]}
         >
           {title}
         </Link>
-      </li>
+      </Menu.Item>
     );
   }
 );
