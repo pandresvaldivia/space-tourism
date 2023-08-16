@@ -2,14 +2,15 @@ import type { Component } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import type {
   DestinationItem,
-  DestinationsResponse,
+  DestinationsData,
 } from "@interfaces/services/destinations";
+import type { GraphqlGenericResponse } from "@interfaces/services/response";
 
 export const DestinationsLoader = component$(
   ({ response, skeleton: Skeleton, menu: Menu }: DestinationsLoaderProps) => {
-    const { errors, data } = response;
+    const { data } = response;
 
-    if (errors) return <Skeleton />;
+    if (!data.Destinations) return <Skeleton />;
 
     const { docs: items } = data.Destinations;
 
@@ -18,7 +19,7 @@ export const DestinationsLoader = component$(
 );
 
 type DestinationsLoaderProps = {
-  response: DestinationsResponse;
+  response: GraphqlGenericResponse<DestinationsData>;
   skeleton: Component<{}>;
   menu: Component<{ items: DestinationItem[] }>;
 };

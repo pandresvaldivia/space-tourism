@@ -1,14 +1,14 @@
-import { component$ } from '@builder.io/qwik';
-import { useHeaderMenuProvider } from '@providers';
-import { MobileHeader, DesktopHeader } from '@organisms';
+import { component$ } from "@builder.io/qwik";
+import { useHeaderMenuProvider } from "@providers";
+import { MobileHeader, DesktopHeader } from "@organisms";
 
 export const MainHeader = component$(() => {
-	useHeaderMenuProvider();
+  useHeaderMenuProvider();
 
-	return (
-		<>
-			<MobileHeader />
-			<DesktopHeader />
-		</>
-	);
+  return (
+    <>
+      <MobileHeader />
+      <DesktopHeader />
+    </>
+  );
 });

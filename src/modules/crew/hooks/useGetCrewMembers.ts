@@ -1,9 +1,9 @@
 import { useGraphql } from "@hooks";
 import { CREW_MEMBERS } from "@services/graphql/crew";
-import type { CrewMembersResponse } from "@interfaces/services/crew-members";
+import type { CrewMembersData } from "@interfaces/services/crew-members";
 
 export const useGetCrewMembers = () => {
-  const crewMembersResponse = useGraphql<CrewMembersResponse>(CREW_MEMBERS);
+  const crewMembersResponse = useGraphql<CrewMembersData>(CREW_MEMBERS);
 
   return { crewMembersResponse };
 };

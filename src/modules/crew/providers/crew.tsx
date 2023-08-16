@@ -4,15 +4,15 @@ import {
   useContext,
   useContextProvider,
 } from "@builder.io/qwik";
-import type { CrewMemberBySlugResponse } from "~/core/interfaces/services/crew-member-by-slug";
+import type { CrewMemberBySlugDetails } from "@interfaces/services/crew-member-by-slug";
 
 const crewContext =
-  createContextId<Readonly<Signal<CrewMemberBySlugResponse>>>(
+  createContextId<Readonly<Signal<CrewMemberBySlugDetails>>>(
     "space.crew-context"
   );
 
 export const useCrewProvider = (
-  crew: Readonly<Signal<CrewMemberBySlugResponse>>
+  crew: Readonly<Signal<CrewMemberBySlugDetails>>
 ) => {
   useContextProvider(crewContext, crew);
 };

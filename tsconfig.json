@@ -33,6 +33,7 @@
 			"@constants/*": ["./src/core/constants/*"],
 			"@interfaces/*": ["./src/core/interfaces/*"],
 			"@services/*": ["./src/core/services/*"],
+			"@media/*": ["./src/media/*"],
 			"@styles/*": ["./src/styles/*"]
 		}
 	},

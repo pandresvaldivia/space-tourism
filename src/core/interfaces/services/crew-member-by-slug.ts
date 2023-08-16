@@ -1,14 +1,10 @@
 import type { Metatags } from "./common/metatags";
-import type { GraphqlGenericResponse } from "./response";
 
-export type CrewMemberBySlugResponse =
-  GraphqlGenericResponse<CrewMemberBySlugData>;
-
-type CrewMemberBySlugData = {
-  CrewMemberBySlug: CrewMemberBySlugDetails;
+export type CrewMemberBySlugData = {
+  CrewMemberBySlug: CrewMemberBySlugDetails | null;
 };
 
-type CrewMemberBySlugDetails = {
+export type CrewMemberBySlugDetails = {
   title: string;
   name: string;
   description: string;

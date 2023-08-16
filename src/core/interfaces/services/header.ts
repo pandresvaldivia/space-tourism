@@ -1,9 +1,5 @@
-import type { GraphqlGenericResponse } from "./response";
-
-export type HeaderResponse = GraphqlGenericResponse<HeaderData>;
-
-type HeaderData = {
-  Header: HeaderNavItems;
+export type HeaderData = {
+  Header: HeaderNavItems | null;
 };
 
 type HeaderNavItems = {

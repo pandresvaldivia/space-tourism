@@ -6,9 +6,10 @@ import { getDescriptionWidth } from "../helpers/layout";
 import { useCrewTransitionContext } from "../providers/crew-transition";
 
 export const CrewContent = component$(() => {
-  const { value } = useCrewContext();
+  const crewMember = useCrewContext();
   const { transition } = useCrewTransitionContext();
-  const { title, name, description } = value.data.CrewMemberBySlug;
+
+  const { title, name, description } = crewMember.value;
 
   return (
     <section

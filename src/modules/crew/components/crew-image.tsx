@@ -6,9 +6,10 @@ import { useCrewContext } from "../providers/crew";
 import { useCrewTransitionContext } from "../providers/crew-transition";
 
 export const CrewImage = component$(() => {
-  const { value } = useCrewContext();
+  const crewMember = useCrewContext();
   const { transition } = useCrewTransitionContext();
-  const { image } = value.data.CrewMemberBySlug;
+
+  const { image } = crewMember.value;
   const { url, alt, height, width } = image;
 
   return (

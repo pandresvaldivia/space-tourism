@@ -1,11 +1,12 @@
 import { component$, type Component } from "@builder.io/qwik";
-import type { HeaderResponse, NavItem } from "@interfaces/services/header";
+import type { HeaderData, NavItem } from "@interfaces/services/header";
+import type { GraphqlGenericResponse } from "@interfaces/services/response";
 
 export const LoaderMenu = component$(
   ({ response, skeleton: Skeleton, menu: Menu }: LoaderMenuProps) => {
-    const { errors, data } = response;
+    const { data } = response;
 
-    if (errors || !data) return <Skeleton />;
+    if (!data.Header) return <Skeleton />;
 
     const { navItems: items } = data.Header;
 
@@ -14,7 +15,7 @@ export const LoaderMenu = component$(
 );
 
 type LoaderMenuProps = {
-  response: HeaderResponse;
+  response: GraphqlGenericResponse<HeaderData>;
   skeleton: Component<{}>;
   menu: Component<{ items: NavItem[] }>;
 };

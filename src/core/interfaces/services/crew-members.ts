@@ -1,9 +1,5 @@
-import type { GraphqlGenericResponse } from "./response";
-
-export type CrewMembersResponse = GraphqlGenericResponse<CrewMembersData>;
-
-type CrewMembersData = {
-  Crews: CrewMembersDocs;
+export type CrewMembersData = {
+  Crews: CrewMembersDocs | null;
 };
 
 type CrewMembersDocs = {

@@ -6,9 +6,9 @@ import { useLocation } from "@builder.io/qwik-city";
 
 export const DestinationDetails = component$(() => {
   const { pathname } = useLocation().url;
-  const { value } = useDestinationContext();
+  const destination = useDestinationContext();
 
-  const { distance, travel_time } = value.data.DestinationBySlug;
+  const { distance, travel_time } = destination.value;
 
   return (
     <section

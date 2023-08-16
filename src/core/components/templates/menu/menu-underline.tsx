@@ -17,6 +17,7 @@ export const MenuUnderline = component$(
           className,
           "absolute bottom-0 transition-all duration-300 ease-out",
         ]}
+        aria-hidden
       />
     );
   }

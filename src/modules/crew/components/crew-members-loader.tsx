@@ -1,15 +1,16 @@
 import type { Component } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import type {
+  CrewMembersData,
   CrewMembersItem,
-  CrewMembersResponse,
 } from "@interfaces/services/crew-members";
+import type { GraphqlGenericResponse } from "@interfaces/services/response";
 
 export const CrewMembersLoader = component$(
   ({ response, skeleton: Skeleton, menu: Menu }: CrewMembersLoaderProps) => {
-    const { errors, data } = response;
+    const { data } = response;
 
-    if (errors) return <Skeleton />;
+    if (!data.Crews) return <Skeleton />;
 
     const { docs: items } = data.Crews;
 
@@ -18,7 +19,7 @@ export const CrewMembersLoader = component$(
 );
 
 type CrewMembersLoaderProps = {
-  response: CrewMembersResponse;
+  response: GraphqlGenericResponse<CrewMembersData>;
   skeleton: Component<{}>;
   menu: Component<{ items: CrewMembersItem[] }>;
 };

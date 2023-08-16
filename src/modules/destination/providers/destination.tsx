@@ -4,14 +4,14 @@ import {
   useContext,
   useContextProvider,
 } from "@builder.io/qwik";
-import type { DestinationBySlugResponse } from "~/core/interfaces/services/destination-by-slug";
+import type { DestinationBySlugDetails } from "@interfaces/services/destination-by-slug";
 
 const destinationContext = createContextId<
-  Readonly<Signal<DestinationBySlugResponse>>
+  Readonly<Signal<DestinationBySlugDetails>>
 >("space.destination-context");
 
 export const useDestinationProvider = (
-  destination: Readonly<Signal<DestinationBySlugResponse>>
+  destination: Readonly<Signal<DestinationBySlugDetails>>
 ) => {
   useContextProvider(destinationContext, destination);
 };

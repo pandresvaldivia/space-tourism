@@ -5,8 +5,8 @@ import destinationImageStyles from "@styles/modules/destination/destination-imag
 import destinationLayoutStyles from "@styles/modules/destination/destination-layout.module.css";
 
 export const DestinationImage = component$(() => {
-  const { value } = useDestinationContext();
-  const { image } = value.data.DestinationBySlug;
+  const destination = useDestinationContext();
+  const { image } = destination.value;
   const { alt, height, width, url } = image;
 
   const handleAnimationEnd = $((event: QwikAnimationEvent<HTMLDivElement>) => {

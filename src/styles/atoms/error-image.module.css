@@ -1,0 +1,81 @@
+.main {
+  animation: orbit 20s ease-in-out infinite;
+}
+
+.message {
+  animation: orbitMessage 20s ease-in-out infinite;
+}
+
+@keyframes orbit {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-3rem, -1.25rem) rotate(-10deg);
+  }
+  50% {
+    transform: translate(0rem, 1.25rem) rotate(15deg);
+  }
+  75% {
+    transform: translate(0.5rem, -1.25rem) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes orbitMessage {
+  0% {
+    transform: translate(3rem, -0.5rem) rotate(0deg);
+  }
+  25% {
+    transform: translate(3rem, -1rem) rotate(10deg);
+  }
+  50% {
+    transform: translate(2rem, -1rem) rotate(-15deg);
+  }
+  75% {
+    transform: translate(3rem, 0rem) rotate(-5deg);
+  }
+  100% {
+    transform: translate(3rem, -0.5rem) rotate(0deg);
+  }
+}
+
+@screen lg {
+  @keyframes orbit {
+    0% {
+      transform: translate(-1rem, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(-5rem, -1.25rem) rotate(-10deg);
+    }
+    50% {
+      transform: translate(-5rem, 1.25rem) rotate(15deg);
+    }
+    75% {
+      transform: translate(-4rem, -1.25rem) rotate(5deg);
+    }
+    100% {
+      transform: translate(-1rem, 0) rotate(0deg);
+    }
+  }
+
+  @keyframes orbitMessage {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: translateY(-3rem) rotate(-15deg);
+    }
+    75% {
+      transform: translateY(0rem) rotate(-5deg);
+    }
+    100% {
+      transform:  rotate(0deg);
+    }
+  }
+}

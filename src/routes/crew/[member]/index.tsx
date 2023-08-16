@@ -3,38 +3,41 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { CrewView } from "@modules/crew/crew-view";
 import { getCrewMemberBySlug } from "@services/api/crew";
-import { useCrewProvider } from "~/modules/crew/providers/crew";
+import { CrewNotFound } from "@modules/crew/components/error/crew-not-found";
+import { NOT_FOUND_METADATA } from "@constants/metatag";
 
-export const useCrewMemberDetails = routeLoader$(async (event) => {
-  const { member: slug } = event.params;
-  const member = await getCrewMemberBySlug(slug);
+export const useCrewMemberDetails = routeLoader$(async ({ params, status }) => {
+  const { member: slug } = params;
+  const crewMember = await getCrewMemberBySlug(slug);
+  const crewMemberData = crewMember.CrewMemberBySlug;
 
-  // TODO: Redirect to 404 if destination is not found
+  if (!crewMemberData) {
+    status(404);
+  }
 
-  return member;
+  return crewMemberData;
 });
 
 export default component$(() => {
-  const member = useCrewMemberDetails();
+  const crewMember = useCrewMemberDetails();
 
-  useCrewProvider(member);
-
-  const { errors, data } = member.value;
-
-  if (errors || !data) {
-    return <div>Loading...</div>;
+  if (!crewMember.value) {
+    return <CrewNotFound />;
   }
 
-  return <CrewView />;
+  return <CrewView crewMember={crewMember} />;
 });
 
 export const head: DocumentHead = ({ resolveValue }) => {
   const destination = resolveValue(useCrewMemberDetails);
-  const { data, errors } = destination;
 
-  if (errors || !data) return {};
+  if (!destination) {
+    return NOT_FOUND_METADATA;
+  }
 
-  const { title, description, image } = data.CrewMemberBySlug.meta;
+  const { meta } = destination;
+
+  const { title, description, image } = meta;
   const { url: thumbnail } = image;
 
   return {
