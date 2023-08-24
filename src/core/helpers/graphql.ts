@@ -8,6 +8,7 @@ export const fetchGraphql = async <T>({
   try {
     const request = JSON.stringify({ query, variables });
 
+    // TODO: Add env variable for enpoint
     const response = await fetch("http://localhost:3000/api/graphql", {
       method: "POST",
       headers: {
@@ -26,9 +27,6 @@ export const fetchGraphql = async <T>({
 
     return responseData;
   } catch (error) {
-    console.log({
-      error,
-    });
     throw new Error("An error occurred while fetching data from the server.");
   }
 };

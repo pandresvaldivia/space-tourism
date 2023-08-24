@@ -2,10 +2,10 @@ import { component$, Slot } from "@builder.io/qwik";
 import crewLayoutStyles from "@styles/modules/crew/crew-layout.module.css";
 import { Wrapper } from "@templates";
 import { CrewNav } from "@modules/crew/components/menu/crew-nav";
-import { useCrewTransitionProvider } from "@modules/crew/providers/crew-transition";
+import { useSlideTransitionProvider } from "@providers";
 
 export default component$(() => {
-  useCrewTransitionProvider();
+  useSlideTransitionProvider();
 
   return (
     <div

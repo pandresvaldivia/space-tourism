@@ -3,11 +3,11 @@ import { component$ } from "@builder.io/qwik";
 import crewLayoutStyles from "@styles/modules/crew/crew-layout.module.css";
 import crewImageStyles from "@styles/modules/crew/crew-image.module.css";
 import { useCrewContext } from "../providers/crew";
-import { useCrewTransitionContext } from "../providers/crew-transition";
+import { useSlideTransitionContext } from "@contexts";
 
 export const CrewImage = component$(() => {
   const crewMember = useCrewContext();
-  const { transition } = useCrewTransitionContext();
+  const { transition } = useSlideTransitionContext();
 
   const { image } = crewMember.value;
   const { url, alt, height, width } = image;

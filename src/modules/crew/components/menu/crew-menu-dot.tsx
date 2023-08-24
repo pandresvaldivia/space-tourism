@@ -2,11 +2,11 @@ import { $, component$ } from "@builder.io/qwik";
 import type { CrewMembersItem } from "@interfaces/services/crew-members";
 import { useCurrentPath } from "@hooks";
 import { Link } from "@builder.io/qwik-city";
-import { useCrewTransitionContext } from "../../providers/crew-transition";
+import { useSlideTransitionContext } from "@contexts";
 
 export const CrewMenuDot = component$(({ member, index }: CrewMenuDotProps) => {
   const { isCurrentPath } = useCurrentPath();
-  const transition = useCrewTransitionContext();
+  const transition = useSlideTransitionContext();
 
   const { slug, title } = member;
   const path = `/crew/${slug}/`;

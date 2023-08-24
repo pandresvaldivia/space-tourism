@@ -3,11 +3,11 @@ import { useCrewContext } from "../providers/crew";
 import crewLayoutStyles from "@styles/modules/crew/crew-layout.module.css";
 import crewContentStyles from "@styles/modules/crew/crew-content.module.css";
 import { getDescriptionWidth } from "../helpers/layout";
-import { useCrewTransitionContext } from "../providers/crew-transition";
+import { useSlideTransitionContext } from "@contexts";
 
 export const CrewContent = component$(() => {
   const crewMember = useCrewContext();
-  const { transition } = useCrewTransitionContext();
+  const { transition } = useSlideTransitionContext();
 
   const { title, name, description } = crewMember.value;
 

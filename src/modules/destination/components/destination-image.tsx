@@ -14,8 +14,6 @@ export const DestinationImage = component$(() => {
 
     element.classList.remove("animate__zoomIn", "animate__animated");
     element.classList.add(destinationImageStyles.float);
-
-    console.log({ target: typeof event.target });
   });
 
   return (
