@@ -1,0 +1,28 @@
+.main {
+  aspect-ratio: 75/34;
+}
+
+.image {
+  object-position: left 50% bottom 30%;
+}
+
+@screen md {
+  .main {
+    aspect-ratio: 384/155;
+  }
+
+  .image {
+    object-position: left 50% bottom 34%;
+  }
+}
+
+@screen lg {
+  .main {
+    max-width: 32.25rem;
+    aspect-ratio: 515/527;
+  }
+
+  .image {
+    object-position: left 50% bottom 40%;
+  }
+}

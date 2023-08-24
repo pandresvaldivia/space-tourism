@@ -1,0 +1,55 @@
+.main {
+  @apply pt-24;
+
+	background: url('/images/technology-bg.webp');
+	background-size: cover;
+	background-position: left -4rem top 0;
+}
+
+.grid {
+	@apply grid-cols-1;
+
+	grid-template-areas: 
+		"title"
+		"image"
+		"menu"
+		"content";
+}
+
+.title {
+	grid-area: title;
+}
+
+.content {
+	grid-area: content;
+}
+
+.menu {
+	grid-area: menu;
+}
+
+.image {
+	grid-area: image;
+}
+
+@screen md {
+  .main {
+    padding-top: 8.5rem;
+		background-position: left 0 top 0;
+	}
+}
+
+@screen lg {
+  .main {
+    padding-top: 12rem;
+  }
+  
+  .grid {
+    grid-template-columns: auto 1fr auto;
+    /* grid-template-rows: auto auto; */
+
+    grid-template-areas: 
+      "title title title"
+      "menu content image"
+  }
+}

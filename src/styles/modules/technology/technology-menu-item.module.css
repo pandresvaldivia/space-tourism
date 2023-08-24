@@ -1,0 +1,18 @@
+.link {
+  @apply h-10;
+}
+
+@screen md {
+  .link {
+    @apply text-2xl;
+
+    height: 3.75rem;
+  }
+}
+
+@screen lg {
+  .link {
+    font-size: 2rem;
+    height: 5rem;
+  }
+}
