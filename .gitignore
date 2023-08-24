@@ -36,6 +36,9 @@ lerna-debug.log*
 *.sln
 *.sw?
 
+# local env files
+.env.local
+
 # Yarn
 .yarn/*
 .yarn/releases

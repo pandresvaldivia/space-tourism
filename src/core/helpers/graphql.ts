@@ -1,3 +1,4 @@
+import { GRAPHQL_URL } from "@constants/services";
 import type { GraphqlGenericResponse } from "../interfaces/services/response";
 
 export const fetchGraphql = async <T>({
@@ -8,8 +9,7 @@ export const fetchGraphql = async <T>({
   try {
     const request = JSON.stringify({ query, variables });
 
-    // TODO: Add env variable for enpoint
-    const response = await fetch("http://localhost:3000/api/graphql", {
+    const response = await fetch(GRAPHQL_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

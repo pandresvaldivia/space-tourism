@@ -9,24 +9,27 @@ export const DestinationNav = component$(() => {
   const destinations = useGetDestinations();
 
   return (
-    <nav
-      aria-label="Destinations menu"
-      class={[
-        destinationLayoutStyles.menu,
-        "mb-5 md:mb-8 lg:mb-9 mx-auto lg:mx-0",
-      ]}
-    >
-      <Resource
-        value={destinations}
-        onResolved={(destinations) => (
-          <DestinationsLoader
-            response={destinations}
-            skeleton={SkeletonDestinationMenu}
-            menu={DestinationMenu}
-          />
-        )}
-        onPending={() => <SkeletonDestinationMenu />}
-      />
-    </nav>
+    <>
+      <nav
+        aria-label="Destinations menu"
+        class={[
+          destinationLayoutStyles.menu,
+          "mb-5 md:mb-8 lg:mb-9 mx-auto lg:mx-0",
+        ]}
+      >
+        <SkeletonDestinationMenu />
+        <Resource
+          value={destinations}
+          onResolved={(destinations) => (
+            <DestinationsLoader
+              response={destinations}
+              skeleton={SkeletonDestinationMenu}
+              menu={DestinationMenu}
+            />
+          )}
+          onPending={() => <SkeletonDestinationMenu />}
+        />
+      </nav>
+    </>
   );
 });
