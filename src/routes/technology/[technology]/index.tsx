@@ -47,15 +47,27 @@ export const head: DocumentHead = ({ resolveValue }) => {
         content: description,
       },
       {
-        name: "og:title",
+        property: "og:title",
         content: title,
       },
       {
-        name: "og:description",
+        property: "og:description",
         content: description,
       },
       {
-        name: "og:image",
+        property: "og:image",
+        content: thumbnail,
+      },
+      {
+        property: "twitter:title",
+        content: title,
+      },
+      {
+        property: "twitter:description",
+        content: description,
+      },
+      {
+        property: "twitter:image",
         content: thumbnail,
       },
     ],

@@ -15,15 +15,31 @@ export const head: DocumentHead = {
       content: DefaultMetadata.DESCRIPTION,
     },
     {
-      name: "og:title",
-      content: "Space tourism",
+      property: "og:title",
+      content: DefaultMetadata.TITLE,
     },
     {
-      name: "og:description",
+      property: "og:description",
       content: DefaultMetadata.DESCRIPTION,
     },
     {
-      name: "og:image",
+      property: "og:image",
+      content: DefaultMetadata.IMAGE,
+    },
+    {
+      property: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      property: "twitter:title",
+      content: DefaultMetadata.TITLE,
+    },
+    {
+      property: "twitter:description",
+      content: DefaultMetadata.DESCRIPTION,
+    },
+    {
+      property: "twitter:image",
       content: DefaultMetadata.IMAGE,
     },
   ],
