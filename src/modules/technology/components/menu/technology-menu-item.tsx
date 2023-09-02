@@ -40,7 +40,7 @@ export const TechnologyMenuItem = component$(
             techologyMenuItemStyles.link,
             {
               "bg-white border-white text-primary": isActive,
-              "border-white/25 text-white": !isActive,
+              "border-white/25 text-white hover:border-white": !isActive,
             },
             "flex items-center justify-center font-bellefair aspect-square rounded-full border transition-colors",
           ]}

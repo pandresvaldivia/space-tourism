@@ -22,7 +22,6 @@ export default component$(() => {
   const technology = useTechnologyDetails();
 
   if (!technology.value) {
-    // TODO: Add custom 404 page
     return <DestinationNotFound />;
   }
 

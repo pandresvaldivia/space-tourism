@@ -17,14 +17,13 @@ export const DestinationNav = component$(() => {
           "mb-5 md:mb-8 lg:mb-9 mx-auto lg:mx-0",
         ]}
       >
-        <SkeletonDestinationMenu />
         <Resource
           value={destinations}
           onResolved={(destinations) => (
             <DestinationsLoader
               response={destinations}
-              skeleton={SkeletonDestinationMenu}
               menu={DestinationMenu}
+              skeleton={SkeletonDestinationMenu}
             />
           )}
           onPending={() => <SkeletonDestinationMenu />}

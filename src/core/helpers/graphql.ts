@@ -1,5 +1,5 @@
 import { GRAPHQL_URL } from "@constants/services";
-import type { GraphqlGenericResponse } from "../interfaces/services/response";
+import type { GraphqlGenericResponse } from "@interfaces/services/response";
 
 export const fetchGraphql = async <T>({
   query,

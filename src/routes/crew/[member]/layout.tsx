@@ -3,6 +3,7 @@ import crewLayoutStyles from "@styles/modules/crew/crew-layout.module.css";
 import { Wrapper } from "@templates";
 import { CrewNav } from "@modules/crew/components/menu/crew-nav";
 import { useSlideTransitionProvider } from "@providers";
+import { HeadlineGroup } from "@atoms";
 
 export default component$(() => {
   useSlideTransitionProvider();
@@ -20,8 +21,13 @@ export default component$(() => {
           "grid content-between mx-auto md:px-10 lg:px-16",
         ]}
       >
-        <Slot />
+        <HeadlineGroup
+          index="02"
+          text="Meet your crew"
+          class={crewLayoutStyles.title}
+        />
         <CrewNav />
+        <Slot />
       </Wrapper>
     </div>
   );

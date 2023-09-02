@@ -4,14 +4,16 @@ import sidebarMenuItemStyles from "@styles/atoms/sidebar-menu-item.module.css";
 import { useCurrentPath } from "@hooks";
 import type { NavItem } from "@interfaces/services/header";
 import { twoDigitsNumberFormat } from "@helpers/number";
+import { useSidebarContext } from "~/core/providers/sidebar";
 
 export const SidebarMenuItem = component$(
   ({ item, index }: SidebarMenuItemProps) => {
-    const { isCurrentPath } = useCurrentPath();
+    const { isCurrentPath, isSubPath } = useCurrentPath();
+    const { closeSidebar } = useSidebarContext();
 
     const { label, url } = item.link;
 
-    const isActive = isCurrentPath(url);
+    const isActive = isSubPath(url) || isCurrentPath(url);
 
     return (
       <li>
@@ -23,6 +25,7 @@ export const SidebarMenuItem = component$(
             "relative flex items-center gap-2.5 pl-8 text-base tracking-menu font-barlow-condensed",
             "before:absolute before:right-0 before:h-full before:origin-right before:bg-white before:w-1 before:scale-0 before:transition-transform uppercase",
           ]}
+          onClick$={closeSidebar}
         >
           <span class="font-bold">{twoDigitsNumberFormat(index)}</span>
           <span>{label}</span>
